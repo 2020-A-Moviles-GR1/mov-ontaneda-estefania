@@ -190,6 +190,16 @@ fun main(args:Array<String>) {
              .fold(100.00,{acumulador,iteracion->acumulador-iteracion})
              .also { println("La vida actual que le queda es: " + it) }
 
+    val nuevoNumeroUno = SumarDosNumerosDos(1, 1)
+    val nuevoNumeroDos = SumarDosNumerosDos(null, 1)
+    val nuevoNumeroTres = SumarDosNumerosDos(1, null)
+    val nuevoNumeroCuatro = SumarDosNumerosDos(null, null)
+
+    println(SumarDosNumerosDos.arregloNumeros)
+    SumarDosNumerosDos.agregarNumero(1)
+    println(SumarDosNumerosDos.arregloNumeros)
+    SumarDosNumerosDos.eliminarNumero(0)
+    println(SumarDosNumerosDos.arregloNumeros)
 }//Cerrado del main
 
 fun calcularSueldo(
@@ -222,16 +232,68 @@ abstract class NumerosJava{
 
 //Kotlin implementation
 abstract class Numeros(
-        val numeroUno:Int,
-        val numeroDos: Int
+        var numeroUno:Int,
+        var numeroDos: Int
         )
 {}
     //Para instanciar podemos usar val nuevosNumeros = Numeros(1,2)
 class Suma(
-            uno:Int,
-            dos: Int
+            var uno:Int, //Parametro
+            var dos: Int //Parametro
     ):Numeros(uno,dos){
         fun sumar():Int{
+            this.uno
+            this.dos
             return this.numeroUno + this.numeroDos
         }
     }
+
+class SumaDos(
+         uno: Int, //Propiedad
+         dos: Int //Propiedad
+): Numeros(uno,dos){
+    fun sumar(): Int{
+        return this.numeroUno + this.numeroDos
+    }
+}
+
+class SumarDosNumerosDos(
+        uno: Int,
+        dos: Int
+): Numeros(uno,dos){
+
+    init {
+        println("HOLA INIT")
+    }
+    //Los constructores deben tener referencia del constructor padre.
+
+    constructor(uno:Int?,dos:Int): this(
+            if (uno == null) 0 else uno,dos){
+        print("Hola 1")
+    }
+
+    constructor(uno:Int,dos:Int?): this (uno,
+            if (dos == null) 0 else dos){
+        print("Hola 2")
+    }
+
+    constructor(uno:Int?,dos:Int?):this(
+            if (uno == null) 0 else uno,
+            if (dos == null) 0 else dos
+    ){
+        print("Hola 3")
+    }
+
+    companion object{
+        val arregloNumeroInicial = arrayListOf(1,2,3,4)
+        val arregloNumeros = arrayListOf(1,2,3,4)
+
+        fun agregarNumero(nuevoNumero:Int){
+            this.arregloNumeros.add(nuevoNumero)
+        }
+
+        fun eliminarNumero(posicionNumero:Int){
+            this.arregloNumeros.removeAt(posicionNumero)
+        }
+    }
+}
