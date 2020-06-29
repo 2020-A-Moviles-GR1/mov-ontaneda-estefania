@@ -200,8 +200,24 @@ fun main(args:Array<String>) {
     println(SumarDosNumerosDos.arregloNumeros)
     SumarDosNumerosDos.eliminarNumero(0)
     println(SumarDosNumerosDos.arregloNumeros)
+
+    var nombre: String? = null
+    nombre = "Nico"
+    imprimirNombre(nombre)
+
+
+    /*Verifica que es diferente de cero
+    if (nombre != null){
+        println(nombre.length)
+    }*/
+    //LLamar variables que podrían ser nulas:
+
+
 }//Cerrado del main
 
+fun imprimirNombre(nombre:String?){
+    println(nombre?.length?.toInt().toDouble()) //ELVIS OPERATOR
+}
 fun calcularSueldo(
         tasa: Double = 12.00, //requerido y se asigna un valor por defecto
         sueldo: Double, // requerido
@@ -295,5 +311,11 @@ class SumarDosNumerosDos(
         fun eliminarNumero(posicionNumero:Int){
             this.arregloNumeros.removeAt(posicionNumero)
         }
+    }
+}
+
+class baseDeDatos{
+    companion object{
+        val datos = arrayListOf<Int>()
     }
 }
