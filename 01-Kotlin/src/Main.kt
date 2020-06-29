@@ -216,7 +216,7 @@ fun main(args:Array<String>) {
 }//Cerrado del main
 
 fun imprimirNombre(nombre:String?){
-    println(nombre?.length?.toInt().toDouble()) //ELVIS OPERATOR
+    println(nombre?.length?.toInt()?.toDouble()) //ELVIS OPERATOR
 }
 fun calcularSueldo(
         tasa: Double = 12.00, //requerido y se asigna un valor por defecto
