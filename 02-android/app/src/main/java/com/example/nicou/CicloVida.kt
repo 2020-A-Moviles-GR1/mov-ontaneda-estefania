@@ -2,6 +2,7 @@ package com.example.nicou
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.PersistableBundle
 import android.util.Log
 import kotlinx.android.synthetic.main.activity_ciclo_vida.*
 
@@ -52,4 +53,23 @@ class CicloVida : AppCompatActivity() {
         super.onDestroy()
         Log.i("Activity", "onDestroy")
     }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        Log.i("Activity", "onSaveInstanceState")
+        outState?.run {
+            putInt("numeroActualGuardado", numeroActual)
+        }
+        super.onSaveInstanceState(outState)
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        Log.i("Activity", "onRestoreInstanceState")
+        val valorRecuperado = savedInstanceState?.getInt("numeroActualGuardado")
+        if(valorRecuperado != null){
+            this.numeroActual = valorRecuperado
+            tv_numero.text = this.numeroActual.toString()
+        }
+    }
+
 }

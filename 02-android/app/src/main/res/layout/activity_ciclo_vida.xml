@@ -8,31 +8,30 @@
 
     <TextView
         android:id="@+id/tv_numero"
-        android:layout_width="140dp"
-        android:layout_height="28dp"
-        android:layout_marginTop="240dp"
+        android:layout_width="211dp"
+        android:layout_height="40dp"
         android:fontFamily="cursive"
         android:text="No tiene valores"
-        android:textColor="#3274B6"
+        android:textColor="#132435"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_anadir"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.761" />
+        app:layout_constraintVertical_bias="0.311" />
 
     <Button
         android:id="@+id/btn_anadir"
         android:layout_width="328dp"
         android:layout_height="59dp"
-        android:layout_marginTop="76dp"
         android:backgroundTint="#6BB6D8"
         android:fontFamily="sans-serif-condensed-medium"
         android:text="AÑADIR"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/tv_numero"
-        app:layout_constraintStart_toStartOf="@+id/tv_numero"
-        app:layout_constraintTop_toBottomOf="@+id/tv_numero" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
