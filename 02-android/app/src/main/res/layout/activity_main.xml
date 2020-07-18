@@ -8,26 +8,46 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:id="@+id/textView"
+        android:layout_width="233dp"
+        android:layout_height="41dp"
+        android:text="Bonjour Nico...!! :D"
+        android:textColor="#44195E"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.595"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.427" />
 
     <Button
         android:id="@+id/btn_ciclo_vida"
-        android:layout_width="136dp"
-        android:layout_height="62dp"
-        android:layout_marginStart="160dp"
-        android:layout_marginTop="410dp"
-        android:layout_marginEnd="163dp"
-        android:layout_marginBottom="273dp"
+        android:layout_width="175dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="390dp"
+        android:backgroundTint="#2DB5B3"
         android:text="CICLO VIDA"
+        android:textColor="#120505"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.559"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/btn_list_view"
+        android:layout_width="175dp"
+        android:layout_height="66dp"
+        android:layout_marginTop="52dp"
+        android:backgroundTint="#80E37F"
+        android:text="LIST VIEW"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/btn_ciclo_vida"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/btn_ciclo_vida"
+        app:layout_constraintTop_toBottomOf="@+id/btn_ciclo_vida" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
