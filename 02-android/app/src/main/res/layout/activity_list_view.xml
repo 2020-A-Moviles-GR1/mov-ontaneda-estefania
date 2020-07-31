@@ -8,10 +8,26 @@
 
     <ListView
         android:id="@+id/lv_numeros"
-        android:layout_width="381dp"
-        android:layout_height="595dp"
-        android:layout_marginTop="72dp"
+        android:layout_width="374dp"
+        android:layout_height="419dp"
+        android:layout_marginTop="136dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.432"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_anadir_entrenador"
+        android:layout_width="134dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="48dp"
+        android:backgroundTint="#951F1F"
+        android:text="AÑADIR ENTRENADOR"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lv_numeros"
+        app:layout_constraintVertical_bias="0.092" />
 </androidx.constraintlayout.widget.ConstraintLayout>
