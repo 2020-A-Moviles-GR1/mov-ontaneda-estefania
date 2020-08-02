@@ -29,7 +29,21 @@ class MainActivity : AppCompatActivity() {
         btn_intent_implicito.setOnClickListener {
             enviarIntentRespuesta()
         }
+
+        btn_resp_propia
+            .setOnClickListener {
+                enviarIntentConRespuestaPropia()
+            }
     }
+
+    fun enviarIntentConRespuestaPropia() {
+        val intentExplicito = Intent(
+            this,
+            IntentEnviarParametros::class.java
+        )
+        startActivityForResult(intentExplicito, 305)
+    }
+
 
     fun enviarIntentRespuesta(){
         val intentConRespuesta = Intent(Intent.ACTION_PICK, ContactsContract.CommonDataKinds.Phone.CONTENT_URI)
@@ -62,6 +76,14 @@ class MainActivity : AppCompatActivity() {
                             Log.i("resultado", "Telefono: ${telefono}")
                         }
                     }
+
+                    305 -> {
+                        if (data!= null){
+                            val nombre = data.getStringExtra("nombre")
+                            val edad = data.getIntExtra("edad", 0)
+                            Log.i("resultado", "Nombre: ${nombre} Edad: ${edad}")
+                        }
+                    }
                 }
             }
             Activity.RESULT_CANCELED -> {
@@ -84,6 +106,15 @@ class MainActivity : AppCompatActivity() {
             ListViewActivity::class.java
         )
         this.startActivity(intentExplicito)
+    }
+
+    fun irAIntentConRespuesta() {
+        val intentExplicito = Intent(
+            this,
+            IntentEnviarParametros::class.java
+        )
+        intentExplicito.putExtra("numero", 2)
+        startActivity(intentExplicito)
     }
 
     fun irIntentEnviarParametrosConRespuesta(){
