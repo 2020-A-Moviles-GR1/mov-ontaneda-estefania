@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.funhero2"
+    android:targetSandboxVersion="2"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="29"
+        android:targetSdkVersion="29" />
+
+    <application
+        android:allowBackup="true"
+        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+        android:debuggable="true"
+        android:extractNativeLibs="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:testOnly="true"
+        android:theme="@style/AppTheme" >
+        <activity android:name="com.example.funhero2.SuperheroeGeneral.borrarSuperheroe" />
+        <activity android:name="com.example.funhero2.SuperheroeGeneral.actualizarSuperheroe" />
+        <activity android:name="com.example.funhero2.SuperheroeGeneral.mostrarSuperheroes" />
+        <activity android:name="com.example.funhero2.SuperheroeGeneral.buscarSuperheroe" />
+        <activity android:name="com.example.funhero2.SuperheroeGeneral.insertarSupeerheroe" />
+        <activity android:name="com.example.funhero2.SuperheroeGeneral.menuPrincipalSuperheroe" />
+        <activity android:name="com.example.funhero2.ComicGeneral.actualizarComic" />
+        <activity android:name="com.example.funhero2.ComicGeneral.BuscarComicActivity" />
+        <activity android:name="com.example.funhero2.ComicGeneral.InsertarComic" />
+        <activity android:name="com.example.funhero2.Lottie" />
+        <activity
+            android:name="com.example.funhero2.ComicGeneral.Comic"
+            android:label="@string/title_activity_comic"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name="com.example.funhero2.principalesUI.comicSuperheroChoose" />
+        <activity
+            android:name="com.example.funhero2.principalesUI.FullscreenActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@style/FullscreenTheme" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <provider
+            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
+            android:authorities="com.example.funhero2.lifecycle-process"
+            android:exported="false"
+            android:multiprocess="true" />
+    </application>
+
+</manifest>

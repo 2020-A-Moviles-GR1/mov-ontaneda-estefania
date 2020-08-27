@@ -1,5 +1,6 @@
 package com.example.nicou
 
+import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -22,23 +23,48 @@ class IntentEnviarParametros : AppCompatActivity() {
             Log.i("intent", "El texto es: ${TextoCompartido}")
         }
 
+        val leo = intent.getParcelableExtra<Mascota>("leo")
+        if(leo != null){
+            Log.i("parcelable", "${leo.nombre} ${leo.duenio?.nombre}")
+        }
+
+        val arregloMascotas = intent.getParcelableArrayListExtra<Mascota>("arregloMascotas")
+        if(arregloMascotas != null){
+            arregloMascotas.forEach {
+                if(it != null){
+                    Log.i("parcelable", "EN ARRAY :)")
+                    Log.i("parcelable", "${it.nombre} ${it.duenio?.nombre}")
+                }
+
+            }
+
+        }
+
         btn_devolver_respuesta.setOnClickListener {
             finish()
         }
 
-        btn_resp_propia
+        btn_resp_aceptar
             .setOnClickListener {
                 val nombre = "Nico"
                 val edad = 22
                 val intentRespuesta = Intent()
                 intentRespuesta.putExtra("nombre", nombre)
                 intentRespuesta.putExtra("edad", edad)
-                // this.setResult()
                 setResult(
                     RESULT_OK,
                     intentRespuesta
                 )
-                // this.finish()
+                finish()
+            }
+
+        btn_resp_cancelar
+            .setOnClickListener {
+                val intentCancelado = Intent()
+                setResult(
+                    Activity.RESULT_CANCELED,
+                    intentCancelado
+                )
                 finish()
             }
     }
