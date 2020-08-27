@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.provider.ContactsContract
 import android.util.Log
 import kotlinx.android.synthetic.main.activity_main.*
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -23,7 +24,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         btn_intent_respuesta.setOnClickListener {
-            irIntentEnviarParametrosConRespuesta()
+            //irIntentEnviarParametrosConRespuesta()
+            irAIntentConRespuesta()
         }
 
         btn_intent_implicito.setOnClickListener {
@@ -114,6 +116,23 @@ class MainActivity : AppCompatActivity() {
             IntentEnviarParametros::class.java
         )
         intentExplicito.putExtra("numero", 2)
+
+        val nico = Usuario(
+            "Nico",
+            22,
+            Date(),
+            10.0
+        )
+
+        val leo = Mascota(
+            "Leo",
+            nico
+        )
+
+        val arregloMascotas = arrayListOf<Mascota>(leo)
+        intentExplicito.putExtra("leo", leo)
+        intentExplicito.putExtra("arregloMascotas", arregloMascotas)
+
         startActivity(intentExplicito)
     }
 
