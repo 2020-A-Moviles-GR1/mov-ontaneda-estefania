@@ -36,6 +36,10 @@ class MainActivity : AppCompatActivity() {
             .setOnClickListener {
                 enviarIntentConRespuestaPropia()
             }
+
+        btn_http.setOnClickListener{
+            abrirActividadHttp()
+        }
     }
 
     fun enviarIntentConRespuestaPropia() {
@@ -46,6 +50,13 @@ class MainActivity : AppCompatActivity() {
         startActivityForResult(intentExplicito, 305)
     }
 
+    fun abrirActividadHttp(){
+        val intentExplicito = Intent(
+            this,
+            HttpActivity::class.java
+        )
+        startActivity(intentExplicito)
+    }
 
     fun enviarIntentRespuesta(){
         val intentConRespuesta = Intent(Intent.ACTION_PICK, ContactsContract.CommonDataKinds.Phone.CONTENT_URI)

@@ -13,36 +13,38 @@
         android:layout_width="233dp"
         android:layout_height="41dp"
         android:text="Holaaa.....!!! :D "
-        android:textColor="#44195E"
+        android:textColor="#000000"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.601"
+        app:layout_constraintHorizontal_bias="0.612"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.353" />
+        app:layout_constraintVertical_bias="0.056" />
 
     <Button
         android:id="@+id/btn_ciclo_vida"
-        android:layout_width="161dp"
-        android:layout_height="38dp"
-        android:layout_marginTop="64dp"
-        android:backgroundTint="#2DB5B3"
+        android:layout_width="167dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="#9E1414"
+        android:drawableTint="#FFFFFF"
         android:text="CICLO VIDA"
-        android:textColor="#120505"
+        android:textColor="#FFFFFF"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.542"
+        app:layout_constraintHorizontal_bias="0.553"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
         android:id="@+id/btn_list_view"
-        android:layout_width="168dp"
-        android:layout_height="40dp"
+        android:layout_width="161dp"
+        android:layout_height="54dp"
         android:layout_marginTop="24dp"
-        android:backgroundTint="#80E37F"
+        android:backgroundTint="#9E1414"
         android:text="LIST VIEW"
+        android:textColor="#FFFFFF"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="@+id/btn_ciclo_vida"
         app:layout_constraintHorizontal_bias="0.0"
@@ -52,9 +54,10 @@
     <Button
         android:id="@+id/btn_intent_respuesta"
         android:layout_width="166dp"
-        android:layout_height="42dp"
-        android:backgroundTint="#E8A854"
+        android:layout_height="55dp"
+        android:backgroundTint="#9E1414"
         android:text="INT RESPUESTA"
+        android:textColor="#FFFFFF"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/btn_list_view"
@@ -77,11 +80,12 @@
 
     <Button
         android:id="@+id/btn_intent_implicito"
-        android:layout_width="165dp"
-        android:layout_height="42dp"
+        android:layout_width="164dp"
+        android:layout_height="60dp"
         android:layout_marginTop="24dp"
-        android:backgroundTint="#E45F5F"
+        android:backgroundTint="#9E1414"
         android:text="I. IMPLICITO"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="@+id/btn_intent_respuesta"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/btn_intent_respuesta"
@@ -89,16 +93,33 @@
 
     <Button
         android:id="@+id/btn_resp_propia"
-        android:layout_width="166dp"
-        android:layout_height="36dp"
-        android:layout_marginStart="136dp"
+        android:layout_width="160dp"
+        android:layout_height="64dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="109dp"
         android:layout_marginBottom="101dp"
+        android:backgroundTint="#9E1414"
         android:text="Respuesta propia"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.537"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_intent_implicito" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_intent_implicito"
+        app:layout_constraintVertical_bias="0.094" />
+
+    <Button
+        android:id="@+id/btn_http"
+        android:layout_width="153dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="22dp"
+        android:backgroundTint="#9E1414"
+        android:text="HTTP"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.523"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_resp_propia"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
