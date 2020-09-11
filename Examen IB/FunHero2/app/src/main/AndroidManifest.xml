@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.funhero2">
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -8,7 +10,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
         <activity android:name=".SuperheroeGeneral.borrarSuperheroe"></activity>
         <activity android:name=".SuperheroeGeneral.actualizarSuperheroe" />
         <activity android:name=".SuperheroeGeneral.mostrarSuperheroes" />
@@ -18,7 +21,6 @@
         <activity android:name=".ComicGeneral.actualizarComic" />
         <activity android:name=".ComicGeneral.BuscarComicActivity" />
         <activity android:name=".ComicGeneral.InsertarComic" />
-        <activity android:name=".Lottie" />
         <activity
             android:name=".ComicGeneral.Comic"
             android:label="@string/title_activity_comic"
