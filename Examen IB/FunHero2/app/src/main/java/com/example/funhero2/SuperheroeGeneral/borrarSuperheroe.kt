@@ -43,8 +43,7 @@ class borrarSuperheroe : AppCompatActivity() {
             }
     }
 
-    fun deleteSuperheroe(
-        posicion: Int) {
+    fun deleteSuperheroe(posicion: Int) {
         val url = urlPrincipal + "/superheroe" + "/" + posicion
         Log.i("url_put", url)
         url.httpDelete().responseString { request, response, result ->

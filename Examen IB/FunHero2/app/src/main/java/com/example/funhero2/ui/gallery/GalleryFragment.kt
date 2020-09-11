@@ -13,6 +13,7 @@ import androidx.lifecycle.ViewModelProviders
 import com.beust.klaxon.Klaxon
 import com.example.funhero2.Modelo.ComicHttp
 import com.example.funhero2.Modelo.ComicMod
+import com.example.funhero2.Modelo.SuperheroeHttp
 import com.example.funhero2.Modelo.SuperheroeMod
 import com.example.funhero2.R
 import com.example.funhero2.ServicioBDDMemoria
@@ -37,13 +38,11 @@ class GalleryFragment : Fragment() {
 
         val root = inflater.inflate(R.layout.fragment_gallery, container, false)
         val textView: TextView = root.findViewById(R.id.text_gallery)
-
         var lista_Comics: ListView = root.findViewById(R.id.lv_comicsEliminar)
 
-        /*var listaComicMemoria = ServicioBDDMemoria.listaComic
-        var listaSuperheroe = ServicioBDDMemoria.listaSuperheroe*/
         var listaComicMemoria = obtenerComics()
-        var listaSuperheroe = ServicioBDDMemoria.listaSuperheroe
+        var listaSuperheroe = obtenerSuperheroe()
+
         val adaptador = ArrayAdapter(requireActivity(), android.R.layout.simple_list_item_1, listaComicMemoria)
         lista_Comics.setAdapter(adaptador)
 
@@ -53,7 +52,7 @@ class GalleryFragment : Fragment() {
 
             var comicSeleccionado = listaComicMemoria[position]
             var superheroeEliminado = comicSeleccionado.nombreComic
-            var posSuper : Int =0
+            var posSuper =0
 
             listaSuperheroe.forEach {
                 if(superheroeEliminado == it.comicName){
@@ -69,14 +68,20 @@ class GalleryFragment : Fragment() {
                 alertDialog.setButton(
                     AlertDialog.BUTTON_POSITIVE, "Yes"
                 ) { dialog, which ->
-                    listaComicMemoria.removeAt(position)
-                    listaSuperheroe.removeAt(posSuper)
-                    adaptador.notifyDataSetChanged()
 
-                    var nombre = listaComicMemoria.get(position).nombreComic
-                    var idComic = obteneridComic(nombre)
+
+                    //var nombre = listaComicMemoria.get(position).nombreComic
+                    var nombreComic = comicSeleccionado.nombreComic
+                    var idComic = obteneridComic(nombreComic)
                     delete_comic(idComic)
 
+                    listaComicMemoria.removeAt(position)
+
+                    var superheroeEliminado = listaSuperheroe.get(position).nameSuperheroe
+                    var idSuperheroe = obteneridSuperheroe(superheroeEliminado)
+                    deleteSuperheroe(idSuperheroe)
+                    listaSuperheroe.removeAt(posSuper)
+                    adaptador.notifyDataSetChanged()
 
                     Snackbar.make(view, "CÓMIC ELIMINADO Y SUPERHEROES MUERTOS :(", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show() }
@@ -133,10 +138,37 @@ class GalleryFragment : Fragment() {
         return idComic
     }
 
-    fun delete_comic(
-        posicion: Int
+    fun obteneridSuperheroe(nombre: String):Int{
+        val url = urlPrincipal + "/superheroe"
+        var idSuperheroe = 0
+        var peticion = url.httpGet().responseString { request, response, result ->
+            when(result){
+                is Result.Success ->{
+                    val data = result.get()
+                    Log.i("KLAXON", "DATA ${data}")
+                    val superheroes = Klaxon().parseArray<SuperheroeHttp>(data)
+                    if(superheroes != null){
+                        superheroes.forEach {
+                            Log.i("KLAXON", "ID: ${it.id}")
+                            Log.i("ID", "ID: ${nombre}")
+                            if(nombre == it.nameSuperheroe){
+                                idSuperheroe= it.id
+                                Log.i("ID", "ID: ${idSuperheroe}")
+                            }
+                        }
+                    }
+                }
+                is Result.Failure ->{
+                    val error = result.getException()
+                    Log.i("Error", "ERROR: ${error}")
+                }
+            }
+        }
+        peticion.join()
+        return idSuperheroe
+    }
 
-    ) {
+    fun delete_comic(posicion: Int) {
         val url = urlPrincipal + "/comic" + "/" + posicion
         Log.i("url_put", url)
         url.httpDelete().responseString { request, response, result ->
@@ -144,6 +176,23 @@ class GalleryFragment : Fragment() {
                 is Result.Failure -> {
                     val error = result.getException()
                     Log.i("Error", "El error al eliminar comic: ${error}")
+                }
+                is Result.Success -> {
+                    val usuarioString = result.get()
+                    Log.i("Exitoso", "El exito al eliminar: ${usuarioString}")
+                }
+            }
+        }
+    }
+
+    fun deleteSuperheroe(posicion: Int) {
+        val url = urlPrincipal + "/superheroe" + "/" + posicion
+        Log.i("url_put", url)
+        url.httpDelete().responseString { request, response, result ->
+            when (result) {
+                is Result.Failure -> {
+                    val error = result.getException()
+                    Log.i("KLAXON-Error", "El error al eliminar superheroe: ${error}")
                 }
                 is Result.Success -> {
                     val usuarioString = result.get()
@@ -177,5 +226,36 @@ class GalleryFragment : Fragment() {
         }
         peticion.join()
         return listaComics
+    }
+
+    fun obtenerSuperheroe(): ArrayList<SuperheroeMod>{
+        val url = urlPrincipal + "/superheroe"
+        var listaSuperheroes = arrayListOf<SuperheroeMod>()
+        var peticion = url.httpGet().responseString { request, response, result ->
+            when (result){
+                is Result.Success ->{
+                    val data = result.get()
+                    Log.i("KLAXON-SUCESS", "SUPERHEROES EN SAILS:${data}")
+                    val comics = Klaxon().parseArray<SuperheroeHttp>(data)
+                    if(comics != null){
+                        comics.forEach{
+                            Log.i("KLAXON", "NOMBRE COMIC: ${it.nameSuperheroe}")
+                            listaSuperheroes.add(SuperheroeMod(
+                                it.nameSuperheroe.toString(),
+                                it.single.toString(),
+                                it.streghtForceLevel.toString(),
+                                it.age.toString(),
+                                it.comicName.toString()))
+                        }
+                    }
+                }
+                is Result.Failure -> {
+                    val ex = result.getException()
+                    Log.i("KLAXON", "ERROR FAILURE:${ex.message}")
+                }
+            }
+        }
+        peticion.join()
+        return listaSuperheroes
     }
 }

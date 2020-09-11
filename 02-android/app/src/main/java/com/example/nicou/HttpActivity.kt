@@ -17,7 +17,7 @@ class HttpActivity : AppCompatActivity() {
         setContentView(R.layout.activity_http)
 
         btn_obtener.setOnClickListener{
-            //obtenerUsuarios()
+            obtenerUsuarios()
             obtenerPokemons()
         }
 
