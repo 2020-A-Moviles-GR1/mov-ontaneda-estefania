@@ -14,9 +14,9 @@ class ServicioBDDMemoria{
              nombreComic: String,
              vigenciaComic : Boolean,
              paginasComic : Int,
-             precioComic :Double
+             precioComic :Float
         ){
-            listaComic.add(ComicMod(nombreComic,vigenciaComic,paginasComic,precioComic))
+            //listaComic.add(ComicMod(nombreComic,vigenciaComic,paginasComic,precioComic))
             Log.i("Lista", "La lista es: "+listaComic.toString())
         }
 
@@ -27,7 +27,7 @@ class ServicioBDDMemoria{
                               streghtForceLevel: Double,
                               age: Int,
                               comicName: String){
-            listaSuperheroe.add(SuperheroeMod(nameSuperheroe,single,streghtForceLevel,age,comicName))
+            //listaSuperheroe.add(SuperheroeMod(nameSuperheroe,single,streghtForceLevel,age,comicName))
             Log.i("Lista", "La lista es: "+ listaSuperheroe.toString())
         }
 

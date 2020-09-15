@@ -9,6 +9,9 @@
         android:minSdkVersion="29"
         android:targetSdkVersion="29" />
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -19,7 +22,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:testOnly="true"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true" >
         <activity android:name="com.example.funhero2.SuperheroeGeneral.borrarSuperheroe" />
         <activity android:name="com.example.funhero2.SuperheroeGeneral.actualizarSuperheroe" />
         <activity android:name="com.example.funhero2.SuperheroeGeneral.mostrarSuperheroes" />
@@ -29,7 +33,6 @@
         <activity android:name="com.example.funhero2.ComicGeneral.actualizarComic" />
         <activity android:name="com.example.funhero2.ComicGeneral.BuscarComicActivity" />
         <activity android:name="com.example.funhero2.ComicGeneral.InsertarComic" />
-        <activity android:name="com.example.funhero2.Lottie" />
         <activity
             android:name="com.example.funhero2.ComicGeneral.Comic"
             android:label="@string/title_activity_comic"
