@@ -5,51 +5,23 @@ import android.os.Parcelable
 
 class SuperheroeHttp(
     var id:Int,
+    var createdAt: Long,
+    var updatedAt: Long,
     var nameSuperheroe: String?,
     var single: String?,
     var streghtForceLevel: String?,
     var age: String?,
-    var comicName: String?
-):Parcelable {
-    constructor(parcel: Parcel) : this(
-        parcel.readInt(),
-        parcel.readString(),
-        parcel.readString(),
-        parcel.readString(),
-        parcel.readString(),
-        parcel.readString()
-    ) {
-    }
+    var comicName: String?,
+    var latitud: String?,
+    var longitud: String?,
+    var imagenURL:String?
+){
+
 
     override fun toString(): String {
         return "El nombre del superhéroe es: ${nameSuperheroe} \n Pertenece a: ${comicName}" +
                 "\n Es soltero?: ${single} \n Su nivel de fuerza es: ${streghtForceLevel}\n " +
                 "Su edad es: ${age}"
     }
-
-    override fun writeToParcel(parcel: Parcel, flags: Int) {
-        parcel.writeString(nameSuperheroe)
-        parcel.writeString(single)
-        parcel.writeString(streghtForceLevel)
-        parcel.writeString(age)
-        parcel.writeString(comicName)
-    }
-
-    override fun describeContents(): Int {
-        return 0
-    }
-
-    companion object CREATOR : Parcelable.Creator<SuperheroeHttp> {
-        override fun createFromParcel(parcel: Parcel): SuperheroeHttp {
-            return SuperheroeHttp(parcel)
-        }
-
-        override fun newArray(size: Int): Array<SuperheroeHttp?> {
-            return arrayOfNulls(size)
-        }
-    }
 }
-
-
-
 

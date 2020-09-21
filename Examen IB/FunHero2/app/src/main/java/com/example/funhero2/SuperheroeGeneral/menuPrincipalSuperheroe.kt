@@ -3,6 +3,7 @@ package com.example.funhero2.SuperheroeGeneral
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.funhero2.Maps.Act_MapaAllSuperheroes
 import com.example.funhero2.R
 import kotlinx.android.synthetic.main.activity_insertar_comic.*
 import kotlinx.android.synthetic.main.activity_menu_principal_superheroe.*
@@ -31,6 +32,10 @@ class menuPrincipalSuperheroe : AppCompatActivity() {
 
         btn_mostrarSup.setOnClickListener {
             irMostrarSup()
+        }
+
+        btn_heroesVillanos.setOnClickListener{
+            irMapaSuperheroes()
         }
     }
 
@@ -73,4 +78,13 @@ class menuPrincipalSuperheroe : AppCompatActivity() {
         )
         this.startActivity(intentExplicito)
     }
+
+    fun irMapaSuperheroes(){
+        val intentExplicito = Intent(
+            this,
+            Act_MapaAllSuperheroes::class.java
+        )
+        this.startActivity(intentExplicito)
+    }
+
 }

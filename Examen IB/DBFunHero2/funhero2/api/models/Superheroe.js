@@ -39,9 +39,21 @@ module.exports = {
       columnName:'nombreComic',
       maxLength:50,
       required: true
-    }
+    },
 
+    latitud:{
+      type: 'string',
+      columnName:'latitudSuperheroe'
+    },
+
+    longitud:{
+      type: 'string',
+      columnName:'longitudSuperheroe'
+  },
+    gym virtual:{
+      type:'string',
+      columnName: 'imagenURL'
+    }
   },
 
 };
-

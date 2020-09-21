@@ -69,8 +69,6 @@ class GalleryFragment : Fragment() {
                     AlertDialog.BUTTON_POSITIVE, "Yes"
                 ) { dialog, which ->
 
-
-                    //var nombre = listaComicMemoria.get(position).nombreComic
                     var nombreComic = comicSeleccionado.nombreComic
                     var idComic = obteneridComic(nombreComic)
                     delete_comic(idComic)

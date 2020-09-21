@@ -37,6 +37,21 @@
         app:srcCompat="@android:drawable/ic_menu_view" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_heroesVillanos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="18dp"
+        android:backgroundTint="#2F106E"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_eliminarSup"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.989"
+        app:srcCompat="@android:drawable/ic_menu_view" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btn_buscarSup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

@@ -18,6 +18,12 @@ import com.example.funhero2.ServicioBDDMemoria
 class BuscarComic : Fragment() {
 
     private lateinit var viewModel: BuscarComicViewModel
+    
+    
+    
+    
+    
+    
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -26,11 +32,11 @@ class BuscarComic : Fragment() {
     ): View? {
         viewModel = ViewModelProviders.of(this).get(BuscarComicViewModel::class.java)
         val root = inflater.inflate(R.layout.buscar_comic_fragment, container, false)
-        var lista_Comics: ListView = root.findViewById(R.id.lv_buscarComic)
-        var listaComicMemoria : ArrayList<ComicMod> = ServicioBDDMemoria.listaComic
+        //var lista_Comics: ListView = root.findViewById(R.id.lv_buscarComic)
+        //var listaComicMemoria : ArrayList<ComicMod> = ServicioBDDMemoria.listaComic
 
-        val adaptador = ArrayAdapter(requireActivity(), android.R.layout.simple_list_item_1, listaComicMemoria)
-        lista_Comics.setAdapter(adaptador)
+        //val adaptador = ArrayAdapter(requireActivity(), android.R.layout.simple_list_item_1, listaComicMemoria)
+        //lista_Comics.setAdapter(adaptador)
         var mSearchTw = object : TextWatcher {
 
             override fun onTextChanged(
@@ -39,7 +45,7 @@ class BuscarComic : Fragment() {
                 before: Int,
                 count: Int
             ) {
-                adaptador.getFilter().filter(s)
+          //      adaptador.getFilter().filter(s)
             }
 
             override fun beforeTextChanged(
