@@ -20,9 +20,6 @@ class comicSuperheroChoose : AppCompatActivity() {
         iv_superhero.setOnClickListener{
             irSuperheroe()
         }
-
-
-
 }
 
     fun irComic (){

@@ -18,13 +18,6 @@ import com.example.funhero2.ServicioBDDMemoria
 class BuscarComic : Fragment() {
 
     private lateinit var viewModel: BuscarComicViewModel
-    
-    
-    
-    
-    
-    
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,

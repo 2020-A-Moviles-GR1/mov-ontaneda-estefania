@@ -50,7 +50,8 @@ module.exports = {
       type: 'string',
       columnName:'longitudSuperheroe'
   },
-    gym virtual:{
+  
+  imagenURL:{
       type:'string',
       columnName: 'imagenURL'
     }

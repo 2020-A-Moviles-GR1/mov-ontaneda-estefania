@@ -35,8 +35,6 @@ class SlideshowFragment : Fragment() {
         val root = inflater.inflate(R.layout.fragment_slideshow, container, false)
         val textView: TextView = root.findViewById(R.id.text_slideshow)
 
-
-        //var listaComicMemoria : ArrayList<ComicMod> = ServicioBDDMemoria.listaComic
         var listaComicMemoria = obtenerComics()
         var lista_Comics:ListView = root.findViewById(R.id.lv_listaComic)
 

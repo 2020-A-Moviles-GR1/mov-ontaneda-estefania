@@ -37,13 +37,11 @@ class insertarSupeerheroe : AppCompatActivity() {
 
         var listaComics: Spinner =findViewById(R.id.sp_comicsSuper)
         var listaComicsMemoria = obtenerComic()
-
         et_nombreSupInsertar.setText(ServicioBDDMemoria.nameSuperheroe)
-
         if(ServicioBDDMemoria.single.equals("true")){
-            rb_soltero.isChecked == true
+            rb_soltero.setChecked(true)
         }else{
-            rb_casado.isChecked == true
+            rb_casado.setChecked(true)
         }
         et_fuerzaInsertar.setText(ServicioBDDMemoria.streghtForceLevel)
         et_edadSupInsertar.setText(ServicioBDDMemoria.age)
@@ -53,22 +51,18 @@ class insertarSupeerheroe : AppCompatActivity() {
             listaComicsMemoria
         )
         listaComics.setAdapter(adaptadordatos)
-
         btn_AgregarSuperheroe.setOnClickListener {
-
             if(crearSuperheroe() == true){
-            Snackbar.make(it, "SUPERHEROE INSERTADO", Snackbar.LENGTH_LONG)
+            Snackbar.make(it, "SUPERHEROE INSERTADO EN LATITUD: ${latitudSup} Y LONGITUD ${longitudSup}", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
             }else{
                 Snackbar.make(it, "Problema al insertar", Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show()
             }
         }
-
         btn_ingresoLatLgn.setOnClickListener {
             irMapa()
         }
-
     }
 
     fun irMapa(){
@@ -108,14 +102,11 @@ class insertarSupeerheroe : AppCompatActivity() {
         return flag
     }
     fun obtenerDatos():List<Pair<String,String>>{
-
         latitudSup = intent.getDoubleExtra("Lat",0.00)
         longitudSup = intent.getDoubleExtra("Lng",0.00)
-
         if(latitudSup != null){
             Log.i("Intent", "La latitud es: ${latitudSup}")
         }
-
         val listaDeParametros = listOf(
             "nameSuperheroe" to et_nombreSupInsertar.text.toString(),
             "single" to obtenerValorRadioButton().toString(),
@@ -128,6 +119,7 @@ class insertarSupeerheroe : AppCompatActivity() {
         )
         return listaDeParametros
     }
+
     fun obtenerValorRadioButton():Boolean{
         var single: Boolean = true
         if(rb_soltero.isChecked == true){
@@ -139,14 +131,15 @@ class insertarSupeerheroe : AppCompatActivity() {
         }
         return single
     }
+
     fun limpiarCajas(){
         et_nombreSupInsertar.setText("")
         et_edadSupInsertar.setText("")
         et_fuerzaInsertar.setText("")
         rb_casado.setChecked(false)
         rb_soltero.setChecked(false)
-
     }
+
     fun obtenerComic(): ArrayList<String> {
         val url = urlPrincipal + "/comic"
         var listaComics= arrayListOf<ComicMod>()
@@ -178,7 +171,6 @@ class insertarSupeerheroe : AppCompatActivity() {
                     ultimo_dato= datos_nombre
                     Log.i("Comic-ultimo",ultimo_dato.toString())
                 }
-
                 is Result.Failure -> {
                     val ex = result.getException()
                     Log.i("http_klaxon", "error:${ex.message}")

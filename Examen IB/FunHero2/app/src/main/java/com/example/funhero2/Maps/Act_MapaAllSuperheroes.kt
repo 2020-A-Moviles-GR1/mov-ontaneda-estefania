@@ -48,8 +48,8 @@ class Act_MapaAllSuperheroes : AppCompatActivity(), OnMapReadyCallback {
 
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
-       /* var arraySuperheroes = obtenerLatLngSuperheroes2()
-
+        establecerConfiguracionMapa(mMap)
+       var arraySuperheroes = obtenerLatLngSuperheroes2()
         arraySuperheroes.forEach {
             var latitud = it.latitud.toString().toDouble()
             var longitud =  it.longitud.toString().toDouble()
@@ -58,53 +58,20 @@ class Act_MapaAllSuperheroes : AppCompatActivity(), OnMapReadyCallback {
             var nombre = it.nameSuperheroe.toString()
             anadirMarcador(latLng,imagenURL,nombre)
             val uri: Uri = Uri.parse(it.imagenURL)
+
             mMap.setOnMarkerClickListener {
-                val intent = Intent(Intent.ACTION_VIEW, uri)
-                startActivity(intent)
+                val intentExplicito = Intent(Intent.ACTION_VIEW, Uri.parse(it.snippet))
+                startActivity(intentExplicito)
                 true
         }
-    }*/
-
-    marcadorConURL()
     }
+        marcadorConURLVillanos()
 
-    /*fun obtenerLatLngSuperheroes():ArrayList<LatLng>{
-        val url = urlPrincipal + "/superheroe"
-        var datosSuperheroes:ArrayList<LatLng>
-        datosSuperheroes = arrayListOf()
-        var peticion = url.httpGet()
-            .responseString { request, response, result ->
-                when (result) {
-                    is Result.Success -> {
-                        val data = result.get()
-                        val superheroes =
-                            Klaxon().converter(ServicioBDDMemoria.convertidorUsuario())
-                                .parseArray<SuperheroeHttp>(data)
-                        if (superheroes != null) {
-                            superheroes.forEach {
-                                Log.i("Superheroe", "Json a Array latitud ${it.latitud.toString()} longitud: ${it.longitud.toString()}")
-                                var latitud: Double = it.latitud?.toDouble() ?: 0.00
-                                var longitud: Double = it.longitud?.toDouble() ?: 0.00
-                                datosSuperheroes.add(LatLng(latitud, longitud))
-                                urlString.add(it.imagenURL?: "")
-                            }
-                        }
-                    }
-                    is Result.Failure -> {
-                        val error = result.getException()
-                        Log.i("Error", "ERROR: ${error}")
-                    }
-                }
-            }
-        peticion.join()
-        return datosSuperheroes
-    }*/
+    }
 
     fun obtenerLatLngSuperheroes2():ArrayList<SuperheroeMapa>{
         val url = urlPrincipal + "/superheroe"
         val superheroeMapa = arrayListOf<SuperheroeMapa>()
-        //var datosSuperheroes:ArrayList<SuperheroeHttp>
-        //datosSuperheroes = arrayListOf()
         var peticion = url.httpGet()
             .responseString { request, response, result ->
                 when (result) {
@@ -131,8 +98,6 @@ class Act_MapaAllSuperheroes : AppCompatActivity(), OnMapReadyCallback {
     }
 
     fun anadirMarcador(latLng: LatLng, url: String, nombreSuperheroe:String) {
-        val origen = LatLng(-0.232283, -78.513623)
-      mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(origen, 12F))
         try {
             val bmImg: Bitmap = Ion.with(this).load(url).asBitmap().get()
             mMap.addMarker(
@@ -141,6 +106,7 @@ class Act_MapaAllSuperheroes : AppCompatActivity(), OnMapReadyCallback {
                     .icon(BitmapDescriptorFactory
                         .fromBitmap(bmImg))
                     .title(nombreSuperheroe)
+                    .snippet(url)
             )
         } catch (e: InterruptedException) {
             e.printStackTrace()
@@ -161,67 +127,62 @@ class Act_MapaAllSuperheroes : AppCompatActivity(), OnMapReadyCallback {
         } else {
             ActivityCompat.requestPermissions(
                 this,
-                arrayOf(
-                    android.Manifest.permission.ACCESS_FINE_LOCATION
-                ),
-                1
-            )
-        }
+        arrayOf(
+            android.Manifest.permission.ACCESS_FINE_LOCATION
+        ),
+        1
+        )
     }
+}
 
     fun establecerConfiguracionMapa(mapa: GoogleMap) {
-        val contexto = this.applicationContext
-        with(mapa) {
-            val permisosFineLocation = ContextCompat.checkSelfPermission(
-                contexto,
-                android.Manifest.permission.ACCESS_FINE_LOCATION
-            )
-            val tienePermisos = permisosFineLocation == PackageManager.PERMISSION_GRANTED
-            if (tienePermisos) {
-                mapa.isMyLocationEnabled = true
+    val origen = LatLng(-0.346810, -78.426605)
+    mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(origen, 15F))
+    val contexto = this.applicationContext
+    with(mapa) {
+        val permisosFineLocation = ContextCompat.checkSelfPermission(
+            contexto,
+            android.Manifest.permission.ACCESS_FINE_LOCATION
+        )
+        val tienePermisos = permisosFineLocation == PackageManager.PERMISSION_GRANTED
+        if (tienePermisos) {
+            mapa.isMyLocationEnabled = true
+        }
+        uiSettings.isZoomControlsEnabled = true
+        uiSettings.isMyLocationButtonEnabled = true
+    }
+}
+
+    fun marcadorConURLVillanos() {
+        val latLongJoker = LatLng(-0.348333, -78.428333)
+        val latlongThanos = LatLng(-0.345586, -78.427196)
+        val latlongHarley = LatLng(-0.346091, -78.429502)
+            try {
+                val bmImg: Bitmap = Ion.with(this)
+                    .load("https://icon-icons.com/icons2/1412/PNG/96/comics-batman-joker_97410.png")
+                    .asBitmap().get()
+                mMap.addMarker(
+                    MarkerOptions().position(latLongJoker).icon(BitmapDescriptorFactory.fromBitmap(bmImg))
+                )
+
+                val bmImg2: Bitmap = Ion.with(this)
+                    .load("https://icon-icons.com/icons2/467/PNG/72/034_Thanos_2x_44249.png")
+                    .asBitmap().get()
+                mMap.addMarker(
+                    MarkerOptions().position(latlongThanos).icon(BitmapDescriptorFactory.fromBitmap(bmImg2))
+                )
+
+                val bmImg3: Bitmap = Ion.with(this)
+                    .load("https://icon-icons.com/icons2/1394/PNG/72/harley01_96780.png")
+                    .asBitmap().get()
+                mMap.addMarker(
+                    MarkerOptions().position(latlongHarley).icon(BitmapDescriptorFactory.fromBitmap(bmImg3))
+                )
+            } catch (e: InterruptedException) {
+                e.printStackTrace()
+            } catch (e: ExecutionException) {
+                e.printStackTrace()
             }
-            uiSettings.isZoomControlsEnabled = true
-            uiSettings.isMyLocationButtonEnabled = true
-        }
     }
-
-    fun marcadoresVillanos() {
-
-        val origen = LatLng(-0.232283, -78.513623)
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(origen, 12F))
-        var datos: ArrayList<LatLng>
-        datos = arrayListOf()
-        datos.add(LatLng(-0.3527114000000001, -78.5414629))
-        datos.add(LatLng(-0.3533981, -78.5476427))
-        datos.add(LatLng(-0.3533981, -78.5476427))
-        datos.add(LatLng(-0.3533981, -78.5476427))
-        datos.add(LatLng(-0.3389788, -78.5452394))
-        datos.add(LatLng(-0.348935, -78.5579424))
-        datos.forEach {
-            mMap.addMarker(
-                MarkerOptions().
-                position(it)
-                    .icon(
-                        BitmapDescriptorFactory.fromResource(R.drawable.batman)
-                    )
-                    .title("Villano"))
-
-        }
-    }
-
-    fun marcadorConURL(){
-        var latLng =LatLng(-0.232283, -78.513623)
-        try {
-            val bmImg: Bitmap = Ion.with(this).load("https://icon-icons.com/icons2/1412/PNG/96/comics-batman-joker_97410.png").asBitmap().get()
-            mMap.addMarker(
-                MarkerOptions().position(latLng).icon(BitmapDescriptorFactory.fromBitmap(bmImg))
-            )
-        } catch (e: InterruptedException) {
-            e.printStackTrace()
-        } catch (e: ExecutionException) {
-            e.printStackTrace()
-        }
-    }
-
 
 }

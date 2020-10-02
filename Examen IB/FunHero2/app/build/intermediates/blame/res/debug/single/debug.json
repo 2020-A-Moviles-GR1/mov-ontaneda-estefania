@@ -28,6 +28,10 @@
         "source": "C:\\Users\\USER\\Documents\\EPN\\VIISEMESTRE\\MOV-Ont-Est\\mov-ontaneda-estefania\\Examen IB\\FunHero2\\app\\src\\main\\res\\drawable\\mujermaravilla.jpg"
     },
     {
+        "merged": "C:\\Users\\USER\\Documents\\EPN\\VIISEMESTRE\\MOV-Ont-Est\\mov-ontaneda-estefania\\Examen IB\\FunHero2\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_listar__superheroes.xml.flat",
+        "source": "C:\\Users\\USER\\Documents\\EPN\\VIISEMESTRE\\MOV-Ont-Est\\mov-ontaneda-estefania\\Examen IB\\FunHero2\\app\\src\\main\\res\\layout\\activity_listar__superheroes.xml"
+    },
+    {
         "merged": "C:\\Users\\USER\\Documents\\EPN\\VIISEMESTRE\\MOV-Ont-Est\\mov-ontaneda-estefania\\Examen IB\\FunHero2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_fondo.jpg.flat",
         "source": "C:\\Users\\USER\\Documents\\EPN\\VIISEMESTRE\\MOV-Ont-Est\\mov-ontaneda-estefania\\Examen IB\\FunHero2\\app\\src\\main\\res\\drawable-v24\\fondo.jpg"
     },
@@ -62,6 +66,10 @@
     {
         "merged": "C:\\Users\\USER\\Documents\\EPN\\VIISEMESTRE\\MOV-Ont-Est\\mov-ontaneda-estefania\\Examen IB\\FunHero2\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_borrar_superheroe.xml.flat",
         "source": "C:\\Users\\USER\\Documents\\EPN\\VIISEMESTRE\\MOV-Ont-Est\\mov-ontaneda-estefania\\Examen IB\\FunHero2\\app\\src\\main\\res\\layout\\activity_borrar_superheroe.xml"
+    },
+    {
+        "merged": "C:\\Users\\USER\\Documents\\EPN\\VIISEMESTRE\\MOV-Ont-Est\\mov-ontaneda-estefania\\Examen IB\\FunHero2\\app\\build\\intermediates\\res\\merged\\debug\\layout_rv_listarsuper.xml.flat",
+        "source": "C:\\Users\\USER\\Documents\\EPN\\VIISEMESTRE\\MOV-Ont-Est\\mov-ontaneda-estefania\\Examen IB\\FunHero2\\app\\src\\main\\res\\layout\\rv_listarsuper.xml"
     },
     {
         "merged": "C:\\Users\\USER\\Documents\\EPN\\VIISEMESTRE\\MOV-Ont-Est\\mov-ontaneda-estefania\\Examen IB\\FunHero2\\app\\build\\intermediates\\res\\merged\\debug\\layout_content_comic.xml.flat",
@@ -220,6 +228,10 @@
         "source": "C:\\Users\\USER\\Documents\\EPN\\VIISEMESTRE\\MOV-Ont-Est\\mov-ontaneda-estefania\\Examen IB\\FunHero2\\app\\src\\main\\res\\layout\\nav_header_comic.xml"
     },
     {
+        "merged": "C:\\Users\\USER\\Documents\\EPN\\VIISEMESTRE\\MOV-Ont-Est\\mov-ontaneda-estefania\\Examen IB\\FunHero2\\app\\build\\intermediates\\res\\merged\\debug\\layout_rv_superheroes.xml.flat",
+        "source": "C:\\Users\\USER\\Documents\\EPN\\VIISEMESTRE\\MOV-Ont-Est\\mov-ontaneda-estefania\\Examen IB\\FunHero2\\app\\src\\main\\res\\layout\\rv_superheroes.xml"
+    },
+    {
         "merged": "C:\\Users\\USER\\Documents\\EPN\\VIISEMESTRE\\MOV-Ont-Est\\mov-ontaneda-estefania\\Examen IB\\FunHero2\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
         "source": "C:\\Users\\USER\\Documents\\EPN\\VIISEMESTRE\\MOV-Ont-Est\\mov-ontaneda-estefania\\Examen IB\\FunHero2\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
     },
@@ -242,6 +254,10 @@
     {
         "merged": "C:\\Users\\USER\\Documents\\EPN\\VIISEMESTRE\\MOV-Ont-Est\\mov-ontaneda-estefania\\Examen IB\\FunHero2\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_buscar_comic.xml.flat",
         "source": "C:\\Users\\USER\\Documents\\EPN\\VIISEMESTRE\\MOV-Ont-Est\\mov-ontaneda-estefania\\Examen IB\\FunHero2\\app\\src\\main\\res\\layout\\activity_buscar_comic.xml"
+    },
+    {
+        "merged": "C:\\Users\\USER\\Documents\\EPN\\VIISEMESTRE\\MOV-Ont-Est\\mov-ontaneda-estefania\\Examen IB\\FunHero2\\app\\build\\intermediates\\res\\merged\\debug\\layout_rv_superheroes2.xml.flat",
+        "source": "C:\\Users\\USER\\Documents\\EPN\\VIISEMESTRE\\MOV-Ont-Est\\mov-ontaneda-estefania\\Examen IB\\FunHero2\\app\\src\\main\\res\\layout\\rv_superheroes2.xml"
     },
     {
         "merged": "C:\\Users\\USER\\Documents\\EPN\\VIISEMESTRE\\MOV-Ont-Est\\mov-ontaneda-estefania\\Examen IB\\FunHero2\\app\\build\\intermediates\\res\\merged\\debug\\drawable_supergirlbuscar.jpg.flat",

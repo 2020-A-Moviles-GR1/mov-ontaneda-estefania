@@ -7,6 +7,8 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.ListView
 import com.beust.klaxon.Klaxon
+import com.example.funhero2.Modelo.ComicHttp
+import com.example.funhero2.Modelo.ComicMod
 import com.example.funhero2.Modelo.SuperheroeHttp
 import com.example.funhero2.Modelo.SuperheroeMod
 import com.example.funhero2.R
@@ -57,7 +59,8 @@ class actualizarSuperheroe : AppCompatActivity() {
                             .setAction("Action", null).show()
                         et_nuevaFuerza.setText("")
                         adaptador.notifyDataSetChanged()
-                        putSuperheroe(position+1,nuevaFuerza)
+                        var idSuper = obteneridSuperheroe(nombreSuper)
+                        putSuperheroe(idSuper,nuevaFuerza)
                     }
 
                     val estado = rbgr_estado.getCheckedRadioButtonId()
@@ -72,11 +75,11 @@ class actualizarSuperheroe : AppCompatActivity() {
                         /*Snackbar.make(it, "QUE SAD!FRIENDZONE", Snackbar.LENGTH_LONG)
                             .setAction("Action", null).show()
                             */
-
                     }
                 }
             }
     }
+
     fun obtenerSuperheroe(): ArrayList<SuperheroeMod>{
         val url = urlPrincipal + "/superheroe"
         var listaSuperheroes = arrayListOf<SuperheroeMod>()
@@ -129,4 +132,36 @@ class actualizarSuperheroe : AppCompatActivity() {
             }
         }
     }
+
+    fun obteneridSuperheroe(nombre: String):Int{
+        val url = urlPrincipal + "/superheroe"
+        var listaSuperheroeHttp = arrayListOf<SuperheroeMod>()
+        var idSuperheroe = 0
+        var peticion = url.httpGet().responseString { request, response, result ->
+            when(result){
+                is Result.Success ->{
+                    val data = result.get()
+                    Log.i("KLAXON", "DATA ${data}")
+                    val comics = Klaxon().parseArray<SuperheroeHttp>(data)
+                    if(comics != null){
+                        comics.forEach {
+                            Log.i("KLAXON", "ID: ${it.id}")
+                            Log.i("ID", "ID: ${nombre}")
+                            if(nombre == it.nameSuperheroe){
+                                idSuperheroe= it.id
+                                Log.i("ID", "ID: ${idSuperheroe}")
+                            }
+                        }
+                    }
+                }
+                is Result.Failure ->{
+                    val error = result.getException()
+                    Log.i("Error", "ERROR: ${error}")
+                }
+            }
+        }
+        peticion.join()
+        return idSuperheroe
+    }
+
 }

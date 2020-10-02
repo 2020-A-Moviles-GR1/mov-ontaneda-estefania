@@ -1296,6 +1296,7 @@ id btn_eliminarSup
 id btn_heroesVillanos
 id btn_ingresoLatLgn
 id btn_insertarSup
+id btn_listarRecycler
 id btn_matarSuperheroe
 id btn_mostrarSup
 id buscarComic
@@ -1375,12 +1376,14 @@ id hybrid
 id icon
 id icon_group
 id icon_only
+id id_relativeLayout
 id ifRoom
 id image
 id imageView
 id imageView10
 id imageView11
 id imageView12
+id imageView13
 id imageView14
 id imageView2
 id imageView3
@@ -1396,6 +1399,8 @@ id invisible
 id italic
 id item_touch_helper_previous_elevation
 id iv_comic
+id iv_recySuperheroe
+id iv_recyclerMenuComida
 id iv_superhero
 id labeled
 id largeLabel
@@ -1403,6 +1408,7 @@ id left
 id light
 id line1
 id line3
+id linearLayout
 id listMode
 id list_item
 id lottie_layer_name
@@ -1446,6 +1452,7 @@ id packed
 id parallax
 id parent
 id parentPanel
+id parent_layout
 id parent_matrix
 id percent
 id pin
@@ -1463,6 +1470,7 @@ id reverse
 id right
 id right_icon
 id right_side
+id rv_superheroes
 id satellite
 id save_image_matrix
 id save_non_transition_alpha
@@ -1529,6 +1537,7 @@ id textStart
 id textView
 id textView10
 id textView11
+id textView12
 id textView13
 id textView14
 id textView15
@@ -1542,6 +1551,10 @@ id textView21
 id textView22
 id textView23
 id textView24
+id textView26
+id textView27
+id textView28
+id textView29
 id textView3
 id textView4
 id textView5
@@ -1569,7 +1582,13 @@ id transition_layout_save
 id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
+id tv_comicSuper
+id tv_edadSuperheroe
+id tv_fuerzasuperheroe
 id tv_imagenURL
+id tv_latSuper
+id tv_longSuper
+id tv_nombreSuperheroe
 id unchecked
 id uniform
 id unlabeled
@@ -1651,6 +1670,7 @@ layout activity_fullscreen
 layout activity_insertar_comic
 layout activity_insertar_comic2
 layout activity_insertar_supeerheroe
+layout activity_listar__superheroes
 layout activity_menu_principal_superheroe
 layout activity_mostrar_superheroes
 layout amu_info_window
@@ -1695,6 +1715,9 @@ layout notification_template_media
 layout notification_template_media_custom
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout rv_listarsuper
+layout rv_superheroes
+layout rv_superheroes2
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material

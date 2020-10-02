@@ -80,10 +80,8 @@ class GalleryFragment : Fragment() {
                     deleteSuperheroe(idSuperheroe)
                     listaSuperheroe.removeAt(posSuper)
                     adaptador.notifyDataSetChanged()
-
                     Snackbar.make(view, "CÓMIC ELIMINADO Y SUPERHEROES MUERTOS :(", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show() }
-
                 alertDialog.setButton(
                     AlertDialog.BUTTON_NEGATIVE, "No"
                 ) { dialog, which -> dialog.dismiss() }

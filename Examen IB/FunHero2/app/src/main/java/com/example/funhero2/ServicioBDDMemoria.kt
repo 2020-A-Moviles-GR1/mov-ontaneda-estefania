@@ -11,15 +11,12 @@ import com.example.funhero2.Modelo.SuperheroeMapa
 import com.example.funhero2.Modelo.SuperheroeMod
 
 class ServicioBDDMemoria{
-
-
     companion object{
         var nameSuperheroe: String = ""
         var single: String = "true"
         var streghtForceLevel: String = ""
         var age: String = ""
         var comicName: String =""
-            //listaSuperheroe.add(SuperheroeMod(nameSuperheroe,single,streghtForceLevel,age,comicName))
 
         fun convertidorUsuario(): Converter {
             val miConvertidorUsuarioHttp = object : Converter {
@@ -67,22 +64,4 @@ class ServicioBDDMemoria{
             return miConvertidorSuperheroe
         }
         }
-
-
-
     }
-        /*var listaComic = arrayListOf<ComicMod>()
-
-        fun añadirComic(
-             nombreComic: String,
-             vigenciaComic : Boolean,
-             paginasComic : Int,
-             precioComic :Float
-        ){
-            //listaComic.add(ComicMod(nombreComic,vigenciaComic,paginasComic,precioComic))
-            Log.i("Lista", "La lista es: "+listaComic.toString())
-        }
-
-
-
-    }*/
