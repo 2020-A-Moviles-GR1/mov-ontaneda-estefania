@@ -167,7 +167,6 @@ class MainActivity : AppCompatActivity() {
         val arregloMascotas = arrayListOf<Mascota>(leo)
         intentExplicito.putExtra("leo", leo)
         intentExplicito.putExtra("arregloMascotas", arregloMascotas)
-
         startActivity(intentExplicito)
     }
 

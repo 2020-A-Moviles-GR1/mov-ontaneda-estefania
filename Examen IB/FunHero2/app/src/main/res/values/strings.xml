@@ -23,4 +23,8 @@
         <item>Vigente</item>
         <item>No vigente</item>
     </string-array>
+    <string name="title_activity_act_insertar_latitud_longitud">Map</string>
+
+    <string name="map_key" translatable="false"></string>
+    <string name="title_activity_act__mapa_all_superheroes">Map</string>
 </resources>

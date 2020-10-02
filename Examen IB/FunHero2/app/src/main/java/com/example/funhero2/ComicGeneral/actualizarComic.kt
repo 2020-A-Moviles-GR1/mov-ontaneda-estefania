@@ -22,7 +22,6 @@ class actualizarComic : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_actualizar_comic)
-
         et_precioComicAct.visibility = View.GONE
         sp_actVigencia.visibility = View.GONE
 
@@ -37,20 +36,16 @@ class actualizarComic : AppCompatActivity() {
                 Log.i("List-view", "Posicion: $position")
                 var comicDeseado = listaComicMemoria[position]
                 var nomComic = comicDeseado.nombreComic
-                //et_nomComicAct.setText(nomComic)
-                var vigencia: String = comicDeseado.vigencia.toString()
+                var vigencia: String = comicDeseado.vigencia
                 if (vigencia.equals("true")) {
                     et_vigenciaAnterior.setText("Vigente")
                 } else {
                     et_vigenciaAnterior.setText("No vigente")
                 }
-                //et_vigComicAct.setText(vigencia)
-                var pagComic: String = comicDeseado.paginas.toString()
-                //et_pagComicAct.setText(pagComic)
-                var precioComic: String = comicDeseado.precio.toString()
+                var pagComic: String = comicDeseado.paginas
+                var precioComic: String = comicDeseado.precio
 
                 et_precioAnterior.setText(precioComic)
-
                 btn_actPrecio.setOnClickListener {
                     et_precioComicAct.visibility = View.VISIBLE
                 }
@@ -63,7 +58,7 @@ class actualizarComic : AppCompatActivity() {
                     if (et_precioComicAct.visibility == View.VISIBLE && sp_actVigencia.visibility == View.GONE) {
                         var precioNuevo = et_precioComicAct.text.toString()
                         if (precioNuevo != "") {
-                            var precioNuevoComp = precioNuevo.toString()
+                            var precioNuevoComp = precioNuevo
                             if (precioNuevoComp != comicDeseado.precio) {
                                 comicDeseado.precio = precioNuevoComp
                                 Snackbar.make(it, "PRECIO ACTUALIZADO", Snackbar.LENGTH_LONG)
@@ -71,7 +66,8 @@ class actualizarComic : AppCompatActivity() {
                                 et_precioAnterior.setText("")
                                 et_precioComicAct.setText("")
                                 adaptador.notifyDataSetChanged()
-                                put_comic(position+1,precioNuevo)
+                                var idComic = obteneridComic(nomComic)
+                                put_comic(idComic,precioNuevo)
                             } else {
                                 Snackbar.make(it, "EL PRECIO ES EL MISMO", Snackbar.LENGTH_LONG)
                                     .setAction("Action", null).show()
@@ -189,6 +185,38 @@ class actualizarComic : AppCompatActivity() {
         peticion.join()
         return listaComics
     }
+
+    fun obteneridComic(nombre: String):Int{
+        val url = urlPrincipal + "/comic"
+        var listaComic = arrayListOf<ComicMod>()
+        var idComic = 0
+        var peticion = url.httpGet().responseString { request, response, result ->
+            when(result){
+                is Result.Success ->{
+                    val data = result.get()
+                    Log.i("KLAXON", "DATA ${data}")
+                    val comics = Klaxon().parseArray<ComicHttp>(data)
+                    if(comics != null){
+                        comics.forEach {
+                            Log.i("KLAXON", "ID: ${it.id}")
+                            Log.i("ID", "ID: ${nombre}")
+                            if(nombre == it.nombreComic){
+                                idComic= it.id
+                                Log.i("ID", "ID: ${idComic}")
+                            }
+                        }
+                    }
+                }
+                is Result.Failure ->{
+                    val error = result.getException()
+                    Log.i("Error", "ERROR: ${error}")
+                }
+            }
+        }
+        peticion.join()
+        return idComic
+    }
+
 }
 
 

@@ -5,14 +5,25 @@ import android.os.Parcelable
 
 class SuperheroeHttp(
     var id:Int,
+    var createdAt: Long,
+    var updatedAt: Long,
     var nameSuperheroe: String?,
     var single: String?,
     var streghtForceLevel: String?,
     var age: String?,
-    var comicName: String?
-):Parcelable {
+    var comicName: String?,
+    var latitud: String?,
+    var longitud: String?,
+    var imagenURL:String?
+):Parcelable{
+
     constructor(parcel: Parcel) : this(
         parcel.readInt(),
+        parcel.readLong(),
+        parcel.readLong(),
+        parcel.readString(),
+        parcel.readString(),
+        parcel.readString(),
         parcel.readString(),
         parcel.readString(),
         parcel.readString(),
@@ -28,11 +39,17 @@ class SuperheroeHttp(
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
+        parcel.writeInt(id)
+        parcel.writeLong(createdAt)
+        parcel.writeLong(updatedAt)
         parcel.writeString(nameSuperheroe)
         parcel.writeString(single)
         parcel.writeString(streghtForceLevel)
         parcel.writeString(age)
         parcel.writeString(comicName)
+        parcel.writeString(latitud)
+        parcel.writeString(longitud)
+        parcel.writeString(imagenURL)
     }
 
     override fun describeContents(): Int {
@@ -49,7 +66,4 @@ class SuperheroeHttp(
         }
     }
 }
-
-
-
 

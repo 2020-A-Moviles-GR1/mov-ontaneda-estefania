@@ -69,8 +69,6 @@ class GalleryFragment : Fragment() {
                     AlertDialog.BUTTON_POSITIVE, "Yes"
                 ) { dialog, which ->
 
-
-                    //var nombre = listaComicMemoria.get(position).nombreComic
                     var nombreComic = comicSeleccionado.nombreComic
                     var idComic = obteneridComic(nombreComic)
                     delete_comic(idComic)
@@ -82,10 +80,8 @@ class GalleryFragment : Fragment() {
                     deleteSuperheroe(idSuperheroe)
                     listaSuperheroe.removeAt(posSuper)
                     adaptador.notifyDataSetChanged()
-
                     Snackbar.make(view, "CÓMIC ELIMINADO Y SUPERHEROES MUERTOS :(", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show() }
-
                 alertDialog.setButton(
                     AlertDialog.BUTTON_NEGATIVE, "No"
                 ) { dialog, which -> dialog.dismiss() }

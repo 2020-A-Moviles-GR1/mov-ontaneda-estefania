@@ -21,7 +21,6 @@ class mostrarSuperheroes : AppCompatActivity() {
         setContentView(R.layout.activity_mostrar_superheroes)
 
         var lista_Superheroe: ListView = findViewById(R.id.lv_mostrarSuperheroes)
-
         var listaSuperheroeMemoria  = obtenerSuperheroes()
 
         val adaptador = ArrayAdapter(this, android.R.layout.simple_list_item_1, listaSuperheroeMemoria)
