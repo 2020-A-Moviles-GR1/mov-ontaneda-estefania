@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".Act_edad_registro">
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="106dp"
+        android:layout_height="92dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/diamond" />
+
+    <Button
+        android:id="@+id/btn_edad"
+        android:layout_width="175dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="84dp"
+        android:background="@drawable/boton_redondo"
+        android:text="SIGUIENTE"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_edad" />
+
+    <EditText
+        android:id="@+id/et_edad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="108dp"
+        android:ems="10"
+        android:hint="Ingresa tu edad"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_edad" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="464dp"
+        android:layout_height="411dp"
+        android:layout_marginBottom="452dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/patrontriangulo1" />
+
+    <TextView
+        android:id="@+id/tv_edad"
+        android:layout_width="246dp"
+        android:layout_height="125dp"
+        android:layout_marginTop="172dp"
+        android:fontFamily="casual"
+        android:text="¿Cuál es tu EDAD?"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.478"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

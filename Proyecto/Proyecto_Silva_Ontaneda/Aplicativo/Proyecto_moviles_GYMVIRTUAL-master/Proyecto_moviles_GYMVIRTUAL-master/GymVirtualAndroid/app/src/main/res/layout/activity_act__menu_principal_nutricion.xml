@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="Activities_MenusOpciones.Act_MenuPrincipal">
+
+    <TextView
+        android:id="@+id/tv_categoria"
+        android:layout_width="wrap_content"
+        android:layout_height="79dp"
+        android:layout_above="@+id/rv_menuPrincipal"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="83dp"
+        android:layout_marginLeft="83dp"
+        android:layout_marginTop="62dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginRight="64dp"
+        android:layout_marginBottom="16dp"
+        android:text="Desayunos"
+        android:textColor="#9C27B0"
+        android:textSize="30sp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_menuPrincipal"
+        android:layout_width="match_parent"
+        android:layout_height="491dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="83dp"
+        android:clipToPadding="false"
+        android:padding="4dp" />
+
+
+</RelativeLayout>

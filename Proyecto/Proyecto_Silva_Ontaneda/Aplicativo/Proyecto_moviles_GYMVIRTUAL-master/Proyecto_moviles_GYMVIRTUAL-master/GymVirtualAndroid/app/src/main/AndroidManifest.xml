@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.gymvirtual">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".MenusYFragmentos.Act_Progreso"></activity>
+        <activity android:name=".Registro.Act_Contrasenia" />
+        <activity android:name=".Ejercicio.Act_EjerCronometro" />
+        <activity android:name=".Ejercicio.Act_Ejercicio_Completo" />
+        <activity android:name=".MenusYFragmentos.Act_ejercicio" />
+        <activity android:name=".MenusYFragmentos.Act_calendario" />
+        <activity android:name=".Menus.Actv_menu_principal" />
+        <activity android:name=".Login.Act_Sexo" />
+        <activity android:name=".Login.Act_peso_registro" />
+        <activity android:name=".Login.Act_edad_registro" />
+        <activity android:name=".Login.Act_Login_Gym" />
+        <activity android:name=".Login.Act_Nombre_Registro" />
+        <activity android:name=".Login.Act_Bienvenido" />
+        <activity android:name=".Login.Act_CorreoLogin" />
+        <activity android:name=".Login.Act_AlturaLogin" />
+        <activity android:name="Activities_MenusOpciones.Act_Recetas" />
+        <activity android:name=".Menus.Act_MenuPrincipalNutricion" />
+        <activity
+            android:name=".Menus.FullscreenActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@style/FullscreenTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

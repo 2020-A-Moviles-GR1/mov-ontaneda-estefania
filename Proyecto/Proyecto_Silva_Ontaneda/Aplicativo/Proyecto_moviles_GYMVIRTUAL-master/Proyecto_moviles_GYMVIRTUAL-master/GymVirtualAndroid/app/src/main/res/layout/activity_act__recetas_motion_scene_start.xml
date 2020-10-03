@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constr5"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layoutDescription="@xml/activity_act__recetas_scene"
+    tools:context="Activities_MenusOpciones.Act_Recetas">
+
+    <ImageView
+        android:id="@+id/imageView13"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/principal" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="parent">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="32dp"
+            android:paddingRight="32dp"
+            android:paddingBottom="32dp"
+            android:text="1. Comenzamos a preparar nuestro huevo de lino. Para ello, mezclaremos la cucharada de lino molido junto con las 3 cucharadas de leche vegetal de nuez de Borges. También haremos el dulce de dátil: trituraremos 5 dátiles (sin hueso) con 80ml de leche vegetal de nuez Borges. Nos tiene que quedar una consistencia cremosa."
+            app:lineHeight="26dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/title_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView13"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/title_layout_bg"
+            android:padding="32dp"
+            android:text="GYM VIRTUAL"
+            android:textColor="#000000"
+            android:textSize="24sp" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".Act_Bienvenido">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/ilottie_gimnasio"
+        android:layout_width="275dp"
+        android:layout_height="198dp"
+        android:layout_marginLeft="77dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="77dp"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/animacion" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/btn_comenzar"
+            android:layout_width="129dp"
+            android:layout_height="57dp"
+            android:layout_marginBottom="67dp"
+            android:background="@drawable/boton_redondo"
+            android:text="COMENZAR"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toTopOf="@+id/iv_twitter"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_nombreBienvenido"
+            android:layout_width="249dp"
+            android:layout_height="100dp"
+            android:layout_marginBottom="28dp"
+            android:fontFamily="casual"
+            android:textSize="36sp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_comenzar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.58"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_facebook"
+            android:layout_width="53dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="69dp"
+            android:layout_marginLeft="69dp"
+            android:layout_marginBottom="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/facebook" />
+
+        <ImageView
+            android:id="@+id/iv_instagram"
+            android:layout_width="53dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="19dp"
+            android:layout_marginLeft="19dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="4dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/iv_twitter"
+            app:layout_constraintStart_toEndOf="@+id/iv_facebook"
+            app:srcCompat="@drawable/instagram" />
+
+        <ImageView
+            android:id="@+id/iv_instagram2"
+            android:layout_width="53dp"
+            android:layout_height="35dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="4dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/iv_twitter"
+            app:layout_constraintStart_toEndOf="@+id/iv_instagram"
+            app:srcCompat="@drawable/exercise" />
+
+        <ImageView
+            android:id="@+id/iv_twitter"
+            android:layout_width="53dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginEnd="27dp"
+            android:layout_marginRight="27dp"
+            android:layout_marginBottom="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/iv_youtube"
+            app:layout_constraintStart_toEndOf="@+id/iv_instagram"
+            app:srcCompat="@drawable/twitter" />
+
+        <ImageView
+            android:id="@+id/iv_youtube"
+            android:layout_width="53dp"
+            android:layout_height="35dp"
+            android:layout_marginEnd="68dp"
+            android:layout_marginRight="68dp"
+            android:layout_marginBottom="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/youtube" />
+
+        <ImageView
+            android:id="@+id/iv_bienvenido"
+            android:layout_width="411dp"
+            android:layout_height="179dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="4dp"
+            app:layout_constraintBottom_toTopOf="@+id/tv_nombreBienvenido"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/welcome" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</LinearLayout>

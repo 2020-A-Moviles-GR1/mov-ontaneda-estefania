@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="3dp"
+    app:cardElevation="3dp"
+    app:cardUseCompatPadding="true"
+    >
+
+    <RelativeLayout
+        android:id="@+id/parent_layout"
+        android:layout_width="411dp"
+        android:layout_height="219dp">
+
+        <ImageView
+            android:id="@+id/iv_recyclerMenuComida"
+            android:layout_width="406dp"
+            android:layout_height="229dp"
+            android:layout_marginBottom="412dp"
+            android:scaleType="fitStart"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/comida" />
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="3dp"
+    app:cardElevation="3dp"
+    app:cardUseCompatPadding="true">
+
+    <RelativeLayout
+        android:id="@+id/id_relativeLayoutProgre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/tituloProgre"
+            android:layout_width="70dp"
+            android:layout_height="37dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginEnd="96dp"
+            android:layout_marginRight="96dp"
+            android:text="Titulo"
+            android:textColor="@android:color/holo_blue_dark"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/fechaProgre"
+            android:layout_width="124dp"
+            android:layout_height="31dp"
+            android:layout_below="@+id/tituloProgre"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="31dp"
+            android:layout_marginRight="31dp"
+            android:text="Fecha"
+            android:textColor="@android:color/black"
+            android:textSize="12sp" />
+
+        <ImageView
+            android:id="@+id/id_abdomenProgre"
+            android:layout_width="137dp"
+            android:layout_height="84dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="22dp"
+            android:layout_marginLeft="22dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginEnd="226dp"
+            android:layout_marginRight="226dp"
+            android:src="@drawable/abdomen">
+
+        </ImageView>
+
+
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

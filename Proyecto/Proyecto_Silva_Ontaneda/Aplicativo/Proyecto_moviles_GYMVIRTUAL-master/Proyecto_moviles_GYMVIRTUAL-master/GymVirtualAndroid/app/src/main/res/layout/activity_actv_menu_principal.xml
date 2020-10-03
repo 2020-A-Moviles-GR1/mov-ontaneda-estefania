@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Actv_menu_principal"
+    android:orientation="vertical"
+    >
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/cardview_light_background">
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/calendario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:icon="@drawable/calendario4"
+            android:text="Mensual" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/retos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:icon="@drawable/retos"
+            android:text="Retos" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/nutricion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:icon="@drawable/nutricion"
+            android:text="Nutrición" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/historico"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:icon="@drawable/historico"
+            android:text="Progreso" />
+    </com.google.android.material.tabs.TabLayout>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/vp_menu"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+</LinearLayout>
